@@ -6,7 +6,6 @@ from .models import Comment
 from .serializers import CommentSerializer
 
 
-
 # Create your views here.
 
 
@@ -15,7 +14,7 @@ from .serializers import CommentSerializer
 def get_all_comments(request):
     comments = Comment.object.all()
     serializer = CommentSerializer(comments, many=True)
-    return Response(serializer.data)
+    return Response(serializer.data, status=status.HTTP_200_OK)
 
 @api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated])
@@ -33,17 +32,4 @@ def user_comments(request):
         serializer = CommentSerializer(comments, many=True)
         return Response(serializer.data)
 
-        
 
-
-
-#     if request.method == 'POST':
-#         serializer = CarSerializer(data=request.data)
-#         if serializer.is_valid():
-#             serializer.save(user=request.user)
-#             return Response(serializer.data, status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-#     elif request.method == 'GET':
-#         cars = Car.objects.filter(user_id=request.user.id)
-#         serializer = CarSerializer(cars, many=True)
-#         return Response(serializer.data)
