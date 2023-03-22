@@ -4,8 +4,8 @@ from comments import views
 
 
 urlpatterns = [
-    path('', views.user_comments), 
-    path('<int:video_id>/', views.get_all_comments)
+    path('', views.get_all_comments), 
+    path('<str:video_id>/', views.user_comments)
 ]
 
 

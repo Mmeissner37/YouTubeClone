@@ -28,6 +28,12 @@ ALLOWED_HOSTS = []
 AUTH_USER_MODEL = 'authentication.User'
 
 
+
+REST_FRAMEWORK = {
+    'COERCE_DECIMAL_TO_STRING': False
+}
+
+
 # Application definition
 
 INSTALLED_APPS = [
