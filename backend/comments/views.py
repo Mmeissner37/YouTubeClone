@@ -11,7 +11,7 @@ from .serializers import CommentSerializer
 
 
 @api_view(['GET'])
-# @permission_classes([AllowAny])
+@permission_classes([AllowAny])
 def get_all_comments(request):
     comments = Comment.objects.all()
     serializer = CommentSerializer(comments, many=True)
@@ -20,18 +20,19 @@ def get_all_comments(request):
 @api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated])
 def user_comments(request, video_id):
-
-    if request.method == 'POST':
-        serializer = CommentSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save(data=request.video.id)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    elif request.method == 'GET':
+    print(
+        'User ', f"{request.user.id} {request.user.email} {request.user.username}")
+    if request.method == 'GET':
         comments = Comment.objects.filter(video_id=video_id)
         print(comments)
         serializer = CommentSerializer(comments, many=True)
         return Response(serializer.data)
+    elif request.method == 'POST':
+        serializer = CommentSerializer(data=request.data)
+        if serializer.is_valid() == True:
+            serializer.save(user=request.user)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 

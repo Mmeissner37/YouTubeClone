@@ -11,4 +11,3 @@ class Comment(models.Model):
     likes = models.IntegerField(null=True)
     dislikes = models.IntegerField(null=True)
 
-    
