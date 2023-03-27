@@ -9,6 +9,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import AddCarPage from "./pages/AddCarPage/AddCarPage";
 import SearchPage from "./pages/SearchPage/SearchPage";
+import CommentForm from "./components/CommentForm/CommentForm";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -38,7 +39,7 @@ function App() {
           path='/' 
           element={
           <PrivateRoute>
-
+            <CommentForm />
           </PrivateRoute>
           } 
         />
