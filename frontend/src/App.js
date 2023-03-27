@@ -8,6 +8,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import AddCarPage from "./pages/AddCarPage/AddCarPage";
+import SearchPage from "./pages/SearchPage/SearchPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -19,7 +20,9 @@ import PrivateRoute from "./utils/PrivateRoute";
 function App() {
   return (
     <div>
-      <Navbar />
+      <div className="navbar">
+        <Navbar />
+      </div>
       <Routes>
         <Route
           path="/"
@@ -32,10 +35,10 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route 
-          path='/addcar' 
+          path='/' 
           element={
           <PrivateRoute>
-            <AddCarPage />
+
           </PrivateRoute>
           } 
         />

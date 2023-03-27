@@ -2,21 +2,11 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 
 
-const SearchBar  = ({searchForVideo}) => {
+const SearchBar  = () => {
     const [video, setVideo] = useState([]);
-    const [searchVideo,setSearchVideo] = useState("");
-
-    useEffect(() => {
-        filterVideo();
-    })
 
     function handleSubmit(event) {
         event.preventDefault();
-    }
-
-    async function searchVideo(search) {
-        let response = await axios.get('', search);
-        searchForVideo()
     }
 
     return (
@@ -29,3 +19,5 @@ const SearchBar  = ({searchForVideo}) => {
         </div>
     )
 }
+
+export default SearchBar;
