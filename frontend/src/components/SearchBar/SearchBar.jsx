@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 
 const SearchBar  = () => {
@@ -14,7 +15,7 @@ const SearchBar  = () => {
             <form onSubmit={handleSubmit}>
                 <label>Search for Videos</label>
                 <input type='text' placeholder='Search' /><br></br>
-                <button type='submit'>Search</button>
+                <Link to ="/searchvideos">Search</Link> 
             </form>
         </div>
     )

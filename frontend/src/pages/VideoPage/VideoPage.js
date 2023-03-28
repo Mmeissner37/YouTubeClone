@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import VideoPlayer from "../../components/VideoPlayer";
+import useAuth from "../../hooks/useAuth";
+
+import axios from "axios";
 
 
 const VideoPage = () => {
     const [showVideo, setShowVideo] = useState([]);
 
-
-    return (
+     return (
         <div>
             <VideoPlayer />
         </div>
@@ -14,4 +16,4 @@ const VideoPage = () => {
 
 }
 
-export default VideoPage()
+export default VideoPage

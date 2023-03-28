@@ -12,24 +12,21 @@ const SearchPage = () => {
     useEffect(() => {
         const searchVideo = async () => {
             try {
-                let response = await axios.get("https://www.googleapis.com/youtube/v3/search?q=cats&key={AIzaSyABnENHL5ywj19HkbsYXJoj_7GEAOSo9fo}&part=snippet&type=video&maxresults=5/", {
-                    headers: {
-                        Authorization: "Bearer" + token,
-                    },
-                });
+                let response = await axios.get("https://www.googleapis.com/youtube/v3/search?q=cats&key={AIzaSyABnENHL5ywj19HkbsYXJoj_7GEAOSo9fo}&part=snippet&type=video&maxresults=5/");
                 setVideo(response.data);
             } catch (error) {
                 console.log(error.response.data);
             }
         };
         searchVideo();
-    }, [token]);
+    });
 
     return (
         <div className="container">
             <h3>Welcome {user.username}! </h3>
             <br></br>
             <SearchBar />
+
         </div>
     )
 }

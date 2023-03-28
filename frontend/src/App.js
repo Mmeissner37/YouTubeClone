@@ -26,7 +26,6 @@ function App() {
       <div className="navbar">
         <Navbar />
       </div>
-
       <Routes>
         <Route
           path="/"
