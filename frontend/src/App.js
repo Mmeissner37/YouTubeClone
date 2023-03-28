@@ -10,11 +10,12 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import AddCarPage from "./pages/AddCarPage/AddCarPage";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import CommentForm from "./components/CommentForm/CommentForm";
-import VideoPlayer from "./components/VideoPlayer";
+
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
+import VideoPlayer from "./components/VideoPlayer";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
@@ -25,13 +26,16 @@ function App() {
       <div className="navbar">
         <Navbar />
       </div>
+
       <Routes>
         <Route
           path="/"
           element={
             <PrivateRoute>
               <SearchPage /> <br></br>
-              <VideoPlayer />
+              <div className="videoplayer">
+                <VideoPlayer />
+              </div>
               <CommentForm />
             </PrivateRoute>
           }
