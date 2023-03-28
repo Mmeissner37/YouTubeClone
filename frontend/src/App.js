@@ -10,6 +10,7 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import AddCarPage from "./pages/AddCarPage/AddCarPage";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import CommentForm from "./components/CommentForm/CommentForm";
+import VideoPlayer from "./components/VideoPlayer";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -29,7 +30,9 @@ function App() {
           path="/"
           element={
             <PrivateRoute>
-              <HomePage />
+              <SearchPage /> <br></br>
+              <VideoPlayer />
+              <CommentForm />
             </PrivateRoute>
           }
         />
