@@ -4,12 +4,18 @@ import CommentList from "./CommentList";
 import CommentForm from "./CommentForm/CommentForm";
 
 const VideoPlayer = () => { 
-    const [] = useState ([])
+    const [comments, setComments] = useState ([])
+
+    function addNewComment(comment) {
+        let tempComments = [comment, ...comments];
+        setComments(tempComments);
+    }
 
     return (
         <div className="videoplayer">
             <iframe id="player" type="text/html" width="325" height="200"
         src="https://www.youtube.com/embed/HmjUKMTOKig"></iframe>
+        <CommentForm postUserComment={addNewComment}/>
         <CommentList />
         </div> 
     )

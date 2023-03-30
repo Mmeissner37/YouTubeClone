@@ -11,12 +11,14 @@ const RelatedVideos = () => {
 
     async function getVideos() {
         const response = await axios.get("https://www.googleapis.com/youtube/v3/search?type=video&relatedToVideoId=HmjUKMTOKig&key=AIzaSyABnENHL5ywj19HkbsYXJoj_7GEAOSo9fo&part=snippet");
-        showVideos(response.data)
+        console.log(response.data)
+        setVideos(response.data)
         }
 
-        return (
-            <h1>Commet</h1> 
-        )
+    return (
+        <>
+        {setVideos.fetch()}</>
+    )
 };
     
 

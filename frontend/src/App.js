@@ -16,12 +16,11 @@ import CommentForm from "./components/CommentForm/CommentForm";
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
-import CommentList from "./components/CommentList";
 import RelatedVideos from "./components/RelatedVideos";
+import VideoPlayer from "./components/VideoPlayer";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
-import VideoPage from "./pages/VideoPage/VideoPage";
 
 function App() {
   return (
@@ -30,13 +29,15 @@ function App() {
         <Navbar />
       </div>
       <SearchPage />
-      <VideoPage />
       <Routes>
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
+      </Routes>
+      <VideoPlayer />
+      <Routes>
         <Route path="/postcomment" element={
           <PrivateRoute>
-
+            
           </PrivateRoute>}
         />
       </Routes>
