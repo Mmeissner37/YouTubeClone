@@ -1,27 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import useCustomForm from '../../hooks/useCustomForm';
 
+
+let initialValues = {
+    user: "",
+    comment: "",
+}
 
 const CommentForm = (postUserComment) => {
-    const [comment, setComment] = useState([]);
-    const [user, token] = useAuth();
+    const [comment, setComment] = useState([])
+    const [user, token] = useAuth()
     const navigate = useNavigate()
-    
-    function handleSubmit(event) {
-        event.preventDefault(); 
-        let newComment = {
-            comment: comment,
-        }
-        userComment(newComment)
-    }
+    const [formData, handleInputChange, handleSubmit] = useCustomForm(initialValues, postUserComment)
 
-    async function userComment(newComment) {
+
+    async function postUserComment() {
         try {
-            let response = await axios.post("http://127.0.0.1:8000/api/comments/HmjUKMTOKig/", newComment, {
+            let response = await axios.post("http://127.0.0.1:8000/api/comments/HmjUKMTOKig/", formData, {
             headers: {
-                Authorization: 'Bearer' + token
+                Authorization: 'Bearer ' + token
             }
             })
             navigate("/")
@@ -32,11 +32,13 @@ const CommentForm = (postUserComment) => {
 
     return (
         <div className="commentform">
-            <form onSubmit={handleSubmit}>
-                <label>Comment</label>
-                <input type='text' value={comment} onChange={(event) => setComment(event.target.value)} /><br></br>
-                <button type="submit">Create</button>
+            <form className='form' onSubmit={handleSubmit}>
+                <label>
+                    Comment: {" "}
+                    <input type="text" value={formData.comment} onChange={handleSubmit}></input>
+                </label>
             </form>
+            <Link to="/postcomment">Post</Link>
         </div>
     )
 }

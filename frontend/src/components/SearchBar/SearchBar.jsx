@@ -15,7 +15,7 @@ const SearchBar  = () => {
             <form onSubmit={handleSubmit}>
                 <label>Search for Videos</label>
                 <input type='text' placeholder='Search' /><br></br>
-                <Link to ="/searchvideos">Search</Link> 
+                <Link to ="/relatedvideos">Search</Link> 
             </form>
         </div>
     )

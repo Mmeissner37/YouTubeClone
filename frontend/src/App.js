@@ -2,6 +2,7 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import { Key } from "./localKey";
+import { Link } from "react-router-dom";
 
 // Pages Imports
 import HomePage from "./pages/HomePage/HomePage";
@@ -15,10 +16,12 @@ import CommentForm from "./components/CommentForm/CommentForm";
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
-import VideoPlayer from "./components/VideoPlayer";
+import CommentList from "./components/CommentList";
+import RelatedVideos from "./components/RelatedVideos";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
+import VideoPage from "./pages/VideoPage/VideoPage";
 
 function App() {
   return (
@@ -26,28 +29,15 @@ function App() {
       <div className="navbar">
         <Navbar />
       </div>
+      <SearchPage />
+      <VideoPage />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <PrivateRoute>
-              <SearchPage /> <br></br>
-              <div className="videoplayer">
-                <VideoPlayer />
-              </div>
-              <CommentForm />
-            </PrivateRoute>
-          }
-        />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route 
-          path='/' 
-          element={
+        <Route path="/postcomment" element={
           <PrivateRoute>
-            <CommentForm />
-          </PrivateRoute>
-          } 
+
+          </PrivateRoute>}
         />
       </Routes>
       <Footer />
