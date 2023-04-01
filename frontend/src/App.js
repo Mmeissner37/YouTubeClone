@@ -10,37 +10,34 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import AddCarPage from "./pages/AddCarPage/AddCarPage";
 import SearchPage from "./pages/SearchPage/SearchPage";
-import CommentForm from "./components/CommentForm/CommentForm";
-
+import VideoPage from "./pages/VideoPage/VideoPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import RelatedVideos from "./components/RelatedVideos";
-import VideoPlayer from "./components/VideoPlayer";
+import SearchBar from "./components/SearchBar/SearchBar";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
+import VideoPlayer from "./components/VideoPlayer";
 
 function App() {
   return (
     <div>
-      <div className="navbar">
-        <Navbar />
+      <Navbar />
+      <div className="container">
+        <SearchBar />
       </div>
-      <SearchPage />
       <Routes>
+        <Route path="/" element={<VideoPage />} />
+        <Route path="/searchpage" element={<PrivateRoute><SearchPage /></PrivateRoute> }/>
+      </Routes>
+
+      {/* <Routes>
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-      </Routes>
-      <VideoPlayer />
-      <Routes>
-        <Route path="/postcomment" element={
-          <PrivateRoute>
-            
-          </PrivateRoute>}
-        />
-      </Routes>
+      </Routes> */}
       <Footer />
     </div>
   );

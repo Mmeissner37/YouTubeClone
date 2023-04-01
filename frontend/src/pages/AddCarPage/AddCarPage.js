@@ -23,7 +23,7 @@ const AddCarPage = () => {
                     Authorization: 'Bearer ' + token
                 }
             })
-            navigate("/")
+            navigate("/addnewcar")
         } catch (error) {
             console.log(error.message)
         }

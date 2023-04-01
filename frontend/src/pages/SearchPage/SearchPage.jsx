@@ -1,21 +1,29 @@
 import React, { useEffect, useState } from "react";
-import SearchBar from "../../components/SearchBar/SearchBar";
-
+import { Navigate } from "react-router-dom";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import useCustomForm from "../../hooks/useCustomForm";
+import RelatedVideos from "../../components/RelatedVideos";
 
 
 const SearchPage = () => {
-    const [video, setVideo] = useState([])
+    const [videos, setVideos] = useState([]);
+
+    // function searchByKeyword() {
+    //     var results = YouTube.Search.list('id,snippet', {q: '', maxResults: 5});
+    //     for(var i in results.items) {
+    //         var item = results.items[i];
+    //         Logger.log('[%s] Title: %s', item.id.videoId, item.snippet.title);
+    //     }
+    //     return (searchByKeyword(setVideos))
+    // }
+
 
     return (
-        <div className="container">
-            <h3>Welcome! </h3>
-            <br></br>
-            <SearchBar />
-
+        <div>
+            <h3>Let's see some Videos!</h3>
+            <RelatedVideos />
         </div>
+        
+        
     )
 }
 

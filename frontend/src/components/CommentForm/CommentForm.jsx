@@ -3,12 +3,6 @@ import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
-
-// let initialValues = {
-//     user: {username},
-//     comment: "",
-// }
-
 const CommentForm = (postUserComment) => {
     const [comment, setComment] = useState("")
     const [user, token] = useAuth()
@@ -33,17 +27,17 @@ const CommentForm = (postUserComment) => {
             })
             navigate("/postcomment")
         } catch (error) {
-            console.log(error.message)
+            console.log(error.response.data)
         }
     }
 
     return (
         <form onSubmit={handleSubmit}>
-            <label className='form-box'>User: </label>
-            <input type='text' value={user.username} onChange={(event) => user(event.target.value)} /><br></br>
+            {/* <label className='form-box'>User: </label>
+            <input type='text' value={user.username} onChange={(event) => user(event.target.value)} /><br></br> */}
             <label className='form-box'>Comment: </label>
             <input type='text' value={comment.text} onChange={(event) => setComment(event.target.value)} />
-            <button type='submit'>Post</button>
+            <button onChange={handleSubmit}>Post</button>
         </form>
     )
 

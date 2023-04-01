@@ -16,6 +16,7 @@ const VideoPlayer = () => {
             <iframe id="player" type="text/html" width="325" height="200"
         src="https://www.youtube.com/embed/HmjUKMTOKig"></iframe>
         <CommentForm postUserComment={addNewComment}/>
+        <br></br>
         <CommentList />
         </div> 
     )

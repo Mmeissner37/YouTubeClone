@@ -28,8 +28,8 @@ const CommentList = (props) => {
     <>
       {comment.map((comment) => (
         <ul className="comment-list">
-          <li>User: {comment.user.username}</li>
-          <li>Comment: {comment.text}</li>
+          User: {comment.user.username}<br></br>
+          Comment: {comment.text}
         </ul>
       ))}
     </>

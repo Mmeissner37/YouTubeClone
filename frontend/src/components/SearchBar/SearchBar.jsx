@@ -11,12 +11,14 @@ const SearchBar  = () => {
     }
 
     return (
-        <div className='searchbar'>
-            <form onSubmit={handleSubmit}>
-                <label>Search for Videos</label>
-                <input type='text' placeholder='Search' /><br></br>
-                <Link to ="/relatedvideos">Search</Link> 
-            </form>
+        <div className='container'>
+            <div className='searchbar'>
+                <form onSubmit={handleSubmit}>
+                    <label className='label'>Search for Videos</label>
+                    <input type='text' placeholder='Search' /><br></br>
+                </form>
+                <Link to="/searchpage">Search</Link>
+            </div>
         </div>
     )
 }
