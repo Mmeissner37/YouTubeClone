@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import useAuth from '../../hooks/useAuth';
 
 
 const SearchBar  = () => {
@@ -12,6 +13,7 @@ const SearchBar  = () => {
 
     return (
         <div className='container'>
+            <h2>Welcome!</h2><br></br>
             <div className='searchbar'>
                 <form onSubmit={handleSubmit}>
                     <label className='label'>Search for Videos</label>

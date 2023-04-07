@@ -25,14 +25,14 @@ const CommentList = (props) => {
   }
 
   return (
-    <>
+    <div className="container">
       {comment.map((comment) => (
         <ul className="comment-list">
           User: {comment.user.username}<br></br>
           Comment: {comment.text}
         </ul>
       ))}
-    </>
+    </div>
   );
 };
 export default CommentList;

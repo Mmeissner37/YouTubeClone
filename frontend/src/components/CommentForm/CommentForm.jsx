@@ -5,6 +5,7 @@ import useAuth from '../../hooks/useAuth';
 
 const CommentForm = (postUserComment) => {
     const [comment, setComment] = useState("")
+    const [video, setVideo] = useState([])
     const [user, token] = useAuth()
     const navigate = useNavigate()
 
@@ -18,14 +19,14 @@ const CommentForm = (postUserComment) => {
         postUserComment(newComment)
     }
 
-    async function postUserComment() {
+    async function postUserComment(newComment) {
         try {
-            let response = await axios.post("http://127.0.0.1:8000/api/comments/HmjUKMTOKig/", {
+            let response = await axios.post("http://127.0.0.1:8000/api/comments/HmjUKMTOKig/", newComment, {
             headers: {
                 Authorization: 'Bearer ' + token
             }
             })
-            navigate("/postcomment")
+            navigate("/")
         } catch (error) {
             console.log(error.response.data)
         }
@@ -33,14 +34,13 @@ const CommentForm = (postUserComment) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            {/* <label className='form-box'>User: </label>
-            <input type='text' value={user.username} onChange={(event) => user(event.target.value)} /><br></br> */}
+            <label className='form-box'>User: </label>
+            <input type='text' value={user.username} onChange={(event) => user(event.target.value)} /><br></br>
             <label className='form-box'>Comment: </label>
             <input type='text' value={comment.text} onChange={(event) => setComment(event.target.value)} />
             <button onChange={handleSubmit}>Post</button>
         </form>
     )
-
 }
 
 export default CommentForm;

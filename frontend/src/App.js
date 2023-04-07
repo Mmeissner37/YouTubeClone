@@ -15,29 +15,27 @@ import VideoPage from "./pages/VideoPage/VideoPage";
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
-import RelatedVideos from "./components/RelatedVideos";
-import SearchBar from "./components/SearchBar/SearchBar";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
-import VideoPlayer from "./components/VideoPlayer";
 
 function App() {
   return (
     <div>
       <Navbar />
-      <div className="container">
-        <SearchBar />
-      </div>
       <Routes>
-        <Route path="/" element={<VideoPage />} />
-        <Route path="/searchpage" element={<PrivateRoute><SearchPage /></PrivateRoute> }/>
-      </Routes>
-
-      {/* <Routes>
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-      </Routes> */}
+        <Route
+          path="/"
+          element={
+            <PrivateRoute>
+              <VideoPage />
+            </PrivateRoute>
+          }
+        />
+        <Route path="/searchpage" element={<SearchPage />}></Route>
+      </Routes>
       <Footer />
     </div>
   );

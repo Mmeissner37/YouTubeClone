@@ -10,7 +10,7 @@ const RelatedVideos = () => {
     // }, []);
 
     async function getVideos() {
-        const response = await axios.fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&eventType=none&maxResults=5&relatedToVideoId=HmjUKMTOKig");
+        const response = await axios.get("https://www.googleapis.com/youtube/v3/search");
         console.log(response.data)
         setVideos(response.data)
         }

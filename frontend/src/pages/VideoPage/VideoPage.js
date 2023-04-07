@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
 import VideoPlayer from "../../components/VideoPlayer";
-import useAuth from "../../hooks/useAuth";
-import CommentList from "../../components/CommentList";
-import axios from "axios";
+import SearchBar from "../../components/SearchBar/SearchBar";
 
 
 const VideoPage = () => {
-    const [showVideo, setShowVideo] = useState([]);
+    // const [showVideo, setShowVideo] = useState([]);
 
      return (
         <div>
-            <VideoPlayer />
+            <div>
+                <SearchBar />
+            </div>
+            <div>
+                <VideoPlayer />
+            </div>
         </div>
     )
 
