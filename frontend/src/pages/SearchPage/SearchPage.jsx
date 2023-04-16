@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import VideoMapper from "../../components/VideoMapper";
+
 
 const SearchPage = () => {
     const [videos, setVideos] = useState([
@@ -182,14 +184,12 @@ const SearchPage = () => {
         }
     ]);
 
-
-
     return (
         <div>
             <h3>Let's see some Videos!</h3>
             <Link to="/">Go Back</Link>
             <div>
-                {videos.map(video=><img src={video.snippet.thumbnails.medium.url} />)}
+                <VideoMapper videoArray={videos}/>
             </div>
         </div>
         

@@ -33,14 +33,8 @@ const AddCarPage = () => {
         <div className='container'>
             <h2>{user.username}</h2>
             <form className='form' onSubmit={handleSubmit}>
-                <label>
-                    Make:{" "}
-                    <input 
-                    type='text'
-                    name='make'
-                    value={formData.make}
-                    onChange={handleInputChange}
-                    />
+                <label>Make:{" "}
+                    <input type='text' name='make' value={formData.make} onChange={handleInputChange} />
                 </label>
                 <label>
                     Model:{" "}

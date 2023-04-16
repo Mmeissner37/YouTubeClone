@@ -27,7 +27,7 @@ const CommentList = (props) => {
   return (
     <div className="container">
       {comment.map((comment) => (
-        <ul className="comment-list">
+        <ul key={comment.id}>
           User: {comment.user.username}<br></br>
           Comment: {comment.text}
         </ul>

@@ -1,7 +1,7 @@
 // General Imports
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import { Key } from "./localKey";
+import { KEY } from "./components/API_KEY/API_KEY";
 import { Link } from "react-router-dom";
 
 // Pages Imports

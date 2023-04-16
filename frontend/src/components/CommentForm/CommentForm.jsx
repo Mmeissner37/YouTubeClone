@@ -5,7 +5,7 @@ import useAuth from '../../hooks/useAuth';
 
 const CommentForm = (postUserComment) => {
     const [comment, setComment] = useState("")
-    const [video, setVideo] = useState([])
+    const [videoID, setVideoID] = useState("HmjUKMTOKig")
     const [user, token] = useAuth()
     const navigate = useNavigate()
 
@@ -13,7 +13,8 @@ const CommentForm = (postUserComment) => {
         event.preventDefault();
         let newComment = {
             user: user.username,
-            comment: "",
+            text: "",
+            video_id: "",
         };
         console.log(newComment)
         postUserComment(newComment)
@@ -21,7 +22,7 @@ const CommentForm = (postUserComment) => {
 
     async function postUserComment(newComment) {
         try {
-            let response = await axios.post("http://127.0.0.1:8000/api/comments/HmjUKMTOKig/", newComment, {
+            let response = await axios.post(`http://127.0.0.1:8000/api/comments/${videoID}/`, newComment, {
             headers: {
                 Authorization: 'Bearer ' + token
             }
