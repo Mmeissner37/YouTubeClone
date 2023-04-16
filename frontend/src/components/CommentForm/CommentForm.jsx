@@ -13,8 +13,8 @@ const CommentForm = (postUserComment) => {
         event.preventDefault();
         let newComment = {
             user: user.username,
-            text: "",
-            video_id: "",
+            text: comment.text,
+            video_id: "HmjUKMTOKig",
         };
         console.log(newComment)
         postUserComment(newComment)
@@ -32,7 +32,7 @@ const CommentForm = (postUserComment) => {
             console.log(error.response.data)
         }
     }
-
+//This form doesn't work. I keep getting an error that says the text field may not be blank???
     return (
         <form onSubmit={handleSubmit}>
             <label className='form-box'>User: </label>

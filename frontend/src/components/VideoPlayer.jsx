@@ -6,7 +6,7 @@ import CommentForm from "./CommentForm/CommentForm";
 
 const VideoPlayer = () => { 
     const [comments, setComments] = useState ([]);
-    // const [videos, setVideos] = useState([]);
+    const [videos, setVideos] = useState([]);
     const [videoID, setVideoID] = useState("HmjUKMTOKig");
 
     // const getVideos = async() => {
