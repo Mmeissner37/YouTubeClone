@@ -1,0 +1,8 @@
+.homepage {
+    display: flex;
+    flex-direction: row;
+    max-width: 900px;
+    gap: 4rem;
+    padding: 3rem 2rem;
+    text-align: left;
+}

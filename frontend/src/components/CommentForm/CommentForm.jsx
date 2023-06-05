@@ -36,6 +36,7 @@ const CommentForm = (postUserComment) => {
 //This form doesn't work. I keep getting an error that says the text field may not be blank???
     return (
         <div className='comment-form'> 
+        <h4>Please log-in to leave a comment</h4><br></br>
             <form onSubmit={handleSubmit}>
                 <label className='form-box'>User: </label>
                 <input type='text' value={user.username} onChange={(event) => user(event.target.value)} /><br></br>

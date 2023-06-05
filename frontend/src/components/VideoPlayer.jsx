@@ -21,7 +21,7 @@ const VideoPlayer = () => {
     };
 
     return (
-        <div className="container">
+        <div>
             {/* <button onClick={() => {getVideos()}}>Get More Videos!</button> */}
             <div className="videoplayer">
             <iframe 
@@ -32,10 +32,10 @@ const VideoPlayer = () => {
                 height="300" 
                 src={`https://www.youtube.com/embed/${videoID}`}>
             </iframe>
-        <CommentForm postUserComment={addNewComment}/>
-        <br></br>
-        <CommentList />
             </div>
+            <CommentForm postUserComment={addNewComment}/>
+            <br></br>
+            <CommentList />
         </div>
          
     )
