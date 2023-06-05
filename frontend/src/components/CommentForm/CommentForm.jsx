@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import './CommentForm.css'
 
 const CommentForm = (postUserComment) => {
     const [comment, setComment] = useState("")
@@ -34,13 +35,15 @@ const CommentForm = (postUserComment) => {
     }
 //This form doesn't work. I keep getting an error that says the text field may not be blank???
     return (
-        <form onSubmit={handleSubmit}>
-            <label className='form-box'>User: </label>
-            <input type='text' value={user.username} onChange={(event) => user(event.target.value)} /><br></br>
-            <label className='form-box'>Comment: </label>
-            <input type='text' value={comment.text} onChange={(event) => setComment(event.target.value)} />
-            <button onChange={handleSubmit}>Post</button>
-        </form>
+        <div className='comment-form'> 
+            <form onSubmit={handleSubmit}>
+                <label className='form-box'>User: </label>
+                <input type='text' value={user.username} onChange={(event) => user(event.target.value)} /><br></br>
+                <label className='form-box'>Comment: </label>
+                <input type='text' value={comment.text} onChange={(event) => setComment(event.target.value)} />
+                <button onChange={handleSubmit}>Post</button>
+            </form>
+        </div>
     )
 }
 

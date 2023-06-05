@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import VideoMapper from "../../components/VideoMapper";
+import './SearchPage.css'
 
 
 const SearchPage = () => {
@@ -185,10 +186,10 @@ const SearchPage = () => {
     ]);
 
     return (
-        <div>
+        <div className="searchpage">
             <h3>Let's see some Videos!</h3>
             <Link to="/">Go Back</Link>
-            <div>
+            <div className="video-flex">
                 <VideoMapper videoArray={videos}/>
             </div>
         </div>

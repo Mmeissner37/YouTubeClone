@@ -57,3 +57,10 @@ button:hover {
   font-size: 17px;
 }
 
+.commentlist {
+  border: solid 2px;
+  border-color: black;
+  padding: 1rem;
+  text-align: left;
+}
+

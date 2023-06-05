@@ -25,11 +25,12 @@ const CommentList = (props) => {
   }
 
   return (
-    <div className="container">
+    <div className="commentlist">
       {comment.map((comment) => (
         <ul key={comment.id}>
           User: {comment.user.username}<br></br>
           Comment: {comment.text}
+          <br></br>
         </ul>
       ))}
     </div>

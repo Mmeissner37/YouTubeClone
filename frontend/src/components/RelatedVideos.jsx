@@ -5,9 +5,9 @@ import React, { useState, useEffect } from 'react';
 const RelatedVideos = () => {
     const [videos, setVideos] = useState([]) 
     
-    // useEffect(() => {
-    //     getVideos();
-    // }, []);
+    useEffect(() => {
+        getVideos();
+    }, []);
 
     async function getVideos() {
         const response = await axios.get("https://www.googleapis.com/youtube/v3/search");

@@ -1,12 +1,11 @@
 import React, {useEffect, useState} from 'react';
-
-import { Link } from "react-router-dom";
-
+import {useNavigate} from 'react-router-dom'
 
 
 const SearchBar  = () => {
     const [video, setVideo] = useState([]);
     const [searchInput, setSearchInput] = useState([]);
+    const navigate = useNavigate();
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -28,10 +27,10 @@ const SearchBar  = () => {
             <div className='searchbar'>
                 <form onSubmit={handleSubmit}>
                     <label className='label'>Search for Videos</label>
-                    <input onChange={(e) => setSearchInput(e.target.value)} type='text' placeholder='Search' /><br></br>
+                    <input onChange={(e) => setSearchInput(e.target.value)} type='text' placeholder='Search' />
                 </form>
-                <Link to="/searchpage">Show More Videos</Link> 
-            </div>
+                <button onClick={(setVideo) => navigate('/searchpage')}>Search</button> 
+            </div><br></br>
         </div>
     )
 }

@@ -4,9 +4,10 @@ import VideoPresenter from "./VideoPresenter";
 
 const VideoMapper = ({videoArray}) => {
     return (
-        <ul>
+        <div className="video-flex">
             {videoArray.map(el => <VideoPresenter key={el.id.videoId} video = {el} />)}
-        </ul>
+        </div>
+
     )
 }
 
