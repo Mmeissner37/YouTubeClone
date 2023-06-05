@@ -5,7 +5,7 @@ import useAuth from '../../hooks/useAuth';
 import './CommentForm.css'
 
 const CommentForm = (postUserComment) => {
-    const [comment, setComment] = useState("")
+    const [text, setText] = useState("")
     const [videoID, setVideoID] = useState("HmjUKMTOKig")
     const [user, token] = useAuth()
     const navigate = useNavigate()
@@ -14,7 +14,7 @@ const CommentForm = (postUserComment) => {
         event.preventDefault();
         let newComment = {
             user: user.username,
-            text: comment.text,
+            text: text,
             video_id: "HmjUKMTOKig",
         };
         console.log(newComment)
@@ -40,7 +40,7 @@ const CommentForm = (postUserComment) => {
                 <label className='form-box'>User: </label>
                 <input type='text' value={user.username} onChange={(event) => user(event.target.value)} /><br></br>
                 <label className='form-box'>Comment: </label>
-                <input type='text' value={comment.text} onChange={(event) => setComment(event.target.value)} />
+                <input type='text' value={text} onChange={(event) => setText(event.target.value)} />
                 <button onChange={handleSubmit}>Post</button>
             </form>
         </div>
