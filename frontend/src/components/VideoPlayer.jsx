@@ -33,8 +33,7 @@ const VideoPlayer = () => {
                 src={`https://www.youtube.com/embed/${videoID}`}>
             </iframe>
             </div>
-            <CommentForm postUserComment={addNewComment}/>
-            <br></br>
+            <CommentForm postUserComment={addNewComment}/><br></br>
             <CommentList />
         </div>
          

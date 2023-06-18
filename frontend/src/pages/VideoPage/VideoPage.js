@@ -3,6 +3,8 @@ import VideoPlayer from "../../components/VideoPlayer";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import VideoMapper from "../../components/VideoMapper";
 import './VideoPage.css'
+import useAuth from "../../hooks/useAuth";
+
 
 const VideoPage = () => {
     const [videos, setVideos] = useState([
@@ -183,10 +185,13 @@ const VideoPage = () => {
             }
         }
     ]);
-
+    const [user, token] = useAuth();
 
      return (
         <div className="mainpage">
+            <div className="header">
+                <h1>Welcome {user.username}!</h1><br></br>
+            </div>
             <div>
                 <SearchBar />
             </div>

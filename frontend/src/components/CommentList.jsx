@@ -11,12 +11,12 @@ const CommentList = (props) => {
     getAllComments();
   }, []);
 
-  async function getAllComments() {
-    const response = await axios.get(
-      "http://127.0.0.1:8000/api/comments/HmjUKMTOKig/",
-      {
-        headers: {
-          Authorization: "Bearer " + token,
+    async function getAllComments() {
+        const response = await axios.get(
+            "http://127.0.0.1:8000/api/comments/HmjUKMTOKig/",
+            {
+                headers: {
+                    Authorization: "Bearer " + token,
         },
       }
     );
@@ -28,10 +28,8 @@ const CommentList = (props) => {
     <div className="commentlist">
       {comment.map((comment) => (
         <ul key={comment.id}>
-          User: {comment.user.username}
-          <br></br>
+          User: {comment.user.username}<br></br>
           Comment: {comment.text}
-          <br></br>
         </ul>
       ))}
     </div>

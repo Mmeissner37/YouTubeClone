@@ -27,7 +27,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/" element={<PrivateRoute><VideoPage /></PrivateRoute>} />
-        <Route path="/searchpage" element={<SearchPage />}></Route>
+        <Route path="/morevids" element={<SearchPage />}></Route>
       </Routes>
       <Footer />
     </div>

@@ -23,13 +23,12 @@ const SearchBar  = () => {
 
     return (
         <div className='container'>
-            <h2>Welcome!</h2><br></br>
             <div className='searchbar'>
                 <form onSubmit={handleSubmit}>
                     <label className='label'>Search for Videos</label>
                     <input onChange={(e) => setSearchInput(e.target.value)} type='text' placeholder='Search' />
-                </form>
-                <button onClick={(setVideo) => navigate('/searchpage')}>Search</button> 
+                </form><br></br>
+                <button onClick={(setVideo) => navigate('/morevids')}>Search</button> 
             </div><br></br>
         </div>
     )
