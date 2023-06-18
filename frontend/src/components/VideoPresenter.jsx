@@ -5,7 +5,7 @@ import styled from "styled-components";
 const VideoPresenter = ({video}) => {
     return ( 
     <div>
-        <img src={video.snippet.thumbnails.medium.url} height={video.snippet.thumbnails.medium.height} width={video.snippet.thumbnails.medium.width} alt=""/>
+        <img src={video.snippet.thumbnails.default.url} height={video.snippet.thumbnails.default.height} width={video.snippet.thumbnails.default.width} alt=""/>
         <h4>{video.snippet.title}</h4>
     </div> );
 }

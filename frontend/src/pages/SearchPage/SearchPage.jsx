@@ -185,7 +185,9 @@ const SearchPage = () => {
         }
     ]);
 
-    return (
+
+return (
+    <div className="mainpage">
         <div className="searchpage">
             <h3>Let's see some Videos!</h3>
             <Link to="/">Go Back</Link>
@@ -193,7 +195,7 @@ const SearchPage = () => {
                 <VideoMapper videoArray={videos}/>
             </div>
         </div>
-        
+    </div>
         
     )
 }

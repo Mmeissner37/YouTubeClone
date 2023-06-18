@@ -186,7 +186,7 @@ const VideoPage = () => {
 
 
      return (
-        <div>
+        <div className="mainpage">
             <div>
                 <SearchBar />
             </div>
