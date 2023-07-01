@@ -3,7 +3,8 @@ import { Navigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import VideoMapper from "../../components/VideoMapper";
 import './SearchPage.css'
-
+import SearchBar from "../../components/SearchBar/SearchBar";
+import axios from "axios";
 
 const SearchPage = () => {
     const [videos, setVideos] = useState([
@@ -184,15 +185,24 @@ const SearchPage = () => {
             }
         }
     ]);
+    const [search, setSearch] = useState([]);
 
+
+    async function getVideos() {
+        let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=${search}&part=snippet&key=AIzaSyABnENHL5ywj19HkbsYXJoj_7GEAOSo9fo&type=video&maxresults=5`); 
+        setVideos(response.data.items);
+    }
 
 return (
     <div className="mainpage">
         <div className="searchpage">
             <h3>Let's see some Videos!</h3>
             <Link to="/">Go Back</Link>
+            <div>
+                <SearchBar videos={videos} getVideos={getVideos} setSearch={setSearch} />
+            </div>
             <div className="video-flex">
-                <VideoMapper videoArray={videos}/>
+                <VideoMapper videoArray={videos} setVideos={setVideos}/>
             </div>
         </div>
     </div>

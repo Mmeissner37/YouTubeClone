@@ -11,7 +11,6 @@ const CommentForm = (postUserComment) => {
     const navigate = useNavigate()
 
     function handleSubmit(event) {
-        event.preventDefault();
         let newComment = {
             user: user.username,
             text: text,
